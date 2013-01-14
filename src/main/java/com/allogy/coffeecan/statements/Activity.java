@@ -23,10 +23,18 @@ import javax.validation.constraints.NotNull;
 
 public class Activity extends StatementObject implements Identifiable
 {
+    public final static String ObjectType = "Activity";
+
     @NotNull
     private String id;
 
     private ActivityDefinition definition;
+
+    public Activity(@JsonProperty("id") String id)
+    {
+        this.id = id;
+        objectType = ObjectType;
+    }
 
     @JsonProperty("id")
     public String getID()
@@ -37,5 +45,10 @@ public class Activity extends StatementObject implements Identifiable
     public ActivityDefinition getDefinition()
     {
         return definition;
+    }
+
+    public void setDefinition(ActivityDefinition definition)
+    {
+        this.definition = definition;
     }
 }

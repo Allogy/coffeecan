@@ -29,13 +29,28 @@ public class ActivityDefinition
         return type;
     }
 
+    public void setType(String type)
+    {
+        this.type = type;
+    }
+
     public Map<String, String> getName()
     {
         return name;
     }
 
+    public void setName(Map<String, String> name)
+    {
+        this.name = name;
+    }
+
     public Map<String, String> getDescription()
     {
         return description;
+    }
+
+    public void setDescription(Map<String, String> description)
+    {
+        this.description = description;
     }
 }

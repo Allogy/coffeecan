@@ -25,11 +25,11 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         property = "objectType",
         defaultImpl = Activity.class)
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = Activity.class, name = "Activity"),
+        @JsonSubTypes.Type(value = Activity.class, name = Activity.ObjectType),
 })
 public abstract class StatementObject
 {
-    private String objectType;
+    protected String objectType;
 
     public String getObjectType()
     {

@@ -16,19 +16,41 @@
 
 package com.allogy.coffeecan.statements;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.validation.constraints.NotNull;
 
 public class Account
 {
-    private String name;
-    private String homePage;
+    private final String name;
+    private final String homePage;
 
+    /**
+     * Constructs an online account
+     * @param name the agent's account name
+     * @param homePage the service provider's homepage
+     */
+    public Account(@JsonProperty("name") String name,
+                   @JsonProperty("homePage") String homePage)
+    {
+        this.name = name;
+        this.homePage = homePage;
+    }
+
+    /**
+     * Indicates the name (identifier) associated with this online account.
+     * @return the agent's account name
+     */
     @NotNull
     public String getName()
     {
         return name;
     }
 
+    /**
+     * Indicates a homepage of the service provider for this online account.
+     * @return the service provider's homepage
+     */
     @NotNull
     public String getHomePage()
     {

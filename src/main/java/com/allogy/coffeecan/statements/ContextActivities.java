@@ -24,4 +24,9 @@ public class ContextActivities
     {
         return parent;
     }
+
+    public void setParent(ContextActivity parent)
+    {
+        this.parent = parent;
+    }
 }

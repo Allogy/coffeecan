@@ -29,6 +29,11 @@ public class Verb implements Identifiable
 
     private Map<String, String> display;
 
+    public Verb(@JsonProperty("id") String id)
+    {
+        this.id = id;
+    }
+
     @JsonProperty("id")
     public String getID()
     {
@@ -38,5 +43,10 @@ public class Verb implements Identifiable
     public Map<String, String> getDisplay()
     {
         return display;
+    }
+
+    public void setDisplay(Map<String, String> display)
+    {
+        this.display = display;
     }
 }

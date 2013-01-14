@@ -26,6 +26,11 @@ public class ContextActivity implements Identifiable
     @NotNull
     private String id;
 
+    public ContextActivity(@JsonProperty("id") String id)
+    {
+        this.id = id;
+    }
+
     @JsonProperty("id")
     public String getID()
     {

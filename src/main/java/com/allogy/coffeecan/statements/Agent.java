@@ -22,6 +22,8 @@ import javax.validation.Valid;
 
 public class Agent extends Actor
 {
+    public static final String ObjectType = "Agent";
+
     private String name;
     @JsonProperty("mbox")
     private String mailbox;
@@ -34,6 +36,11 @@ public class Agent extends Actor
         return name;
     }
 
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
     @JsonProperty("mbox")
     public String getMailbox()
     {
@@ -43,5 +50,10 @@ public class Agent extends Actor
     public Account getAccount()
     {
         return account;
+    }
+
+    public void setAccount(Account account)
+    {
+        this.account = account;
     }
 }

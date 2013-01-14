@@ -16,7 +16,15 @@
 
 package com.allogy.coffeecan;
 
+/**
+ * Represents an object which is identifiable within an LRS,
+ * TinCan statement, or other service. The identifier is typically
+ * a URI.
+ */
 public interface Identifiable
 {
+    /**
+     * @return the identifier
+     */
     String getID();
 }
