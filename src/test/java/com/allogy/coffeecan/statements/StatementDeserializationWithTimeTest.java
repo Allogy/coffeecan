@@ -27,6 +27,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.UUID;
 
 import static com.allogy.coffeecan.statements.LoadFromFileHelper.loadResource;
 import static org.hamcrest.CoreMatchers.is;
@@ -81,7 +82,7 @@ public class StatementDeserializationWithTimeTest
         String storedString = "2012-07-05T18:32:12.360Z";
         DateTime stored = getDateTime(storedString);
 
-        Statement statement = new Statement(new Agent(), new Verb(), new Activity());
+        Statement statement = new Statement(new Agent(), new Verb(UUID.randomUUID().toString()), new Activity(UUID.randomUUID().toString()));
         statement.setTimestamp(timestamp);
         statement.setStored(stored);
 
