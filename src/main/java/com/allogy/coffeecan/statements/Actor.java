@@ -16,6 +16,7 @@
 
 package com.allogy.coffeecan.statements;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
@@ -23,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         use = JsonTypeInfo.Id.NAME,
         include = JsonTypeInfo.As.PROPERTY,
         property = "objectType",
+        visible = true,
         defaultImpl = Agent.class)
 @JsonSubTypes({
         @JsonSubTypes.Type(value = Agent.class, name = Agent.ObjectType),
@@ -31,6 +33,7 @@ public abstract class Actor
 {
     private String objectType;
 
+    @JsonIgnore
     public String getObjectType()
     {
         return objectType;
