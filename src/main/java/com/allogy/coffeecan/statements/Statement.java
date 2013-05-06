@@ -17,8 +17,8 @@
 package com.allogy.coffeecan.statements;
 
 import com.allogy.coffeecan.Identifiable;
-import com.allogy.coffeecan.jackson.ISODeserializer;
-import com.allogy.coffeecan.jackson.ISOSerializer;
+import com.allogy.coffeecan.jackson.ISODateTimeDeserializer;
+import com.allogy.coffeecan.jackson.ISODateTimeSerializer;
 import com.allogy.coffeecan.statements.validation.ExistsInLearningRecordStore;
 import com.allogy.coffeecan.statements.validation.NotPresentInLearningRecordStore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -82,25 +82,25 @@ public class Statement extends Triple implements Identifiable
         this.context = context;
     }
 
-    @JsonSerialize(using = ISOSerializer.class)
+    @JsonSerialize(using = ISODateTimeSerializer.class)
     public DateTime getTimestamp()
     {
         return timestamp;
     }
 
-    @JsonDeserialize(using = ISODeserializer.class)
+    @JsonDeserialize(using = ISODateTimeDeserializer.class)
     public void setTimestamp(DateTime timestamp)
     {
         this.timestamp = timestamp;
     }
 
-    @JsonSerialize(using = ISOSerializer.class)
+    @JsonSerialize(using = ISODateTimeSerializer.class)
     public DateTime getStored()
     {
         return stored;
     }
 
-    @JsonDeserialize(using = ISODeserializer.class)
+    @JsonDeserialize(using = ISODateTimeDeserializer.class)
     public void setStored(DateTime stored)
     {
         this.stored = stored;

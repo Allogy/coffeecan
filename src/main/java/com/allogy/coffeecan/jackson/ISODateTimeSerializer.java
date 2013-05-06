@@ -16,28 +16,28 @@
 
 package com.allogy.coffeecan.jackson;
 
-import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JsonDeserializer;
+import com.fasterxml.jackson.databind.JsonSerializer;
+import com.fasterxml.jackson.databind.SerializerProvider;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
 
 import java.io.IOException;
 
-public class ISODeserializer extends JsonDeserializer<DateTime>
+public class ISODateTimeSerializer extends JsonSerializer<DateTime>
 {
     private final DateTimeFormatter dateTimeFormatter;
 
-    public ISODeserializer()
+    public ISODateTimeSerializer()
     {
-        dateTimeFormatter = ISODateTimeFormat.dateTime().withOffsetParsed();
+        dateTimeFormatter = ISODateTimeFormat.dateTime();
     }
 
     @Override
-    public DateTime deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException
+    public void serialize(DateTime dateTime, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException, JsonProcessingException
     {
-        return dateTimeFormatter.parseDateTime(jsonParser.getText());
+        jsonGenerator.writeString(dateTimeFormatter.print(dateTime));
     }
 }
