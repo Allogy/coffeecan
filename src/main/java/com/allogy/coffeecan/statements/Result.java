@@ -16,11 +16,21 @@
 
 package com.allogy.coffeecan.statements;
 
+import com.allogy.coffeecan.jackson.ISOPeriodDeserializer;
+import com.allogy.coffeecan.jackson.ISOPeriodSerializer;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.joda.time.Period;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Result
 {
     private ResultScore score;
     private Boolean success;
     private Boolean completion;
+    @JsonDeserialize(using = ISOPeriodDeserializer.class)
+    private Period duration;
 
     public ResultScore getScore()
     {
@@ -35,5 +45,11 @@ public class Result
     public Boolean getCompletion()
     {
         return completion;
+    }
+
+    @JsonSerialize(using = ISOPeriodSerializer.class)
+    public Period getDuration()
+    {
+        return duration;
     }
 }
