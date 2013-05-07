@@ -18,5 +18,11 @@ package com.allogy.coffeecan.vocabulary;
 
 public class ADLVerbs
 {
-    public static final String CompletedID = "http://adlnet.gov/expapi/verbs/completed";
+    public static final String COMPLETED_ID = "http://adlnet.gov/expapi/verbs/completed";
+
+    /**
+     * Use {@link ADLVerbs.COMPLETED_ID}
+     */
+    @Deprecated
+    public static final String CompletedID = COMPLETED_ID;
 }

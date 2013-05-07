@@ -24,11 +24,11 @@ import java.io.InputStream;
 
 public class LoadFromFileHelper
 {
-    private static final String TestingResourcesPath = "com/allogy/coffeecan/statements";
+    private static final String TESTING_RESOURCES_PATH = "com/allogy/coffeecan/statements";
 
     public static InputStream loadResource(String resourceName) throws IOException
     {
-        Resource resource = new ClassPathResource(TestingResourcesPath + "/" + resourceName + ".json");
+        Resource resource = new ClassPathResource(TESTING_RESOURCES_PATH + "/" + resourceName + ".json");
 
         return resource.getInputStream();
     }

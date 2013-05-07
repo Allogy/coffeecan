@@ -27,7 +27,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         visible = true,
         defaultImpl = Agent.class)
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = Agent.class, name = Agent.ObjectType),
+        @JsonSubTypes.Type(value = Agent.class, name = Agent.OBJECT_TYPE),
 })
 public abstract class Actor
 {
