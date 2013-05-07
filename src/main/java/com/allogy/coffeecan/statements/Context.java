@@ -16,9 +16,12 @@
 
 package com.allogy.coffeecan.statements;
 
+import java.util.Map;
+
 public class Context
 {
     private ContextActivities contextActivities;
+    private Map<String, Object> extensions;
 
     public ContextActivities getContextActivities()
     {
@@ -28,5 +31,15 @@ public class Context
     public void setContextActivities(ContextActivities contextActivities)
     {
         this.contextActivities = contextActivities;
+    }
+
+    public Map<String, Object> getExtensions()
+    {
+        return extensions;
+    }
+
+    public void setExtensions(Map<String, Object> extensions)
+    {
+        this.extensions = extensions;
     }
 }

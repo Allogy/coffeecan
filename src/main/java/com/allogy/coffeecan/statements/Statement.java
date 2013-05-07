@@ -28,6 +28,7 @@ import org.joda.time.DateTime;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
+import java.util.Map;
 
 public class Statement extends Triple implements Identifiable
 {
@@ -42,6 +43,8 @@ public class Statement extends Triple implements Identifiable
     @Null(groups = { NotPresentInLearningRecordStore.class })
     @NotNull(groups = { ExistsInLearningRecordStore.class })
     private DateTime stored;
+
+    private Map<String, Object> extensions;
 
     public Statement(@JsonProperty("actor") Actor actor,
                      @JsonProperty("verb") Verb verb,
@@ -104,5 +107,15 @@ public class Statement extends Triple implements Identifiable
     public void setStored(DateTime stored)
     {
         this.stored = stored;
+    }
+
+    public Map<String, Object> getExtensions()
+    {
+        return extensions;
+    }
+
+    public void setExtensions(Map<String, Object> extensions)
+    {
+        this.extensions = extensions;
     }
 }
