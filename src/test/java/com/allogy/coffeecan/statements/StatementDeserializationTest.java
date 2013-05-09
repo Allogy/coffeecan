@@ -22,10 +22,10 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigDecimal;
 
 import static com.allogy.coffeecan.statements.LoadFromFileHelper.loadResource;
 import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.Matchers.closeTo;
 import static org.junit.Assert.assertThat;
 
 public class StatementDeserializationTest
@@ -119,7 +119,7 @@ public class StatementDeserializationTest
 
         ResultScore score = statement.getResult().getScore();
         assertThat(score, notNullValue());
-        assertThat(score.getScaled(), closeTo(0.95, 0.001));
+        assertThat(score.getScaled(), is(new BigDecimal("0.95")));
         assertThat(statement.getResult().getCompletion(), is(true));
         assertThat(statement.getResult().getSuccess(), is(true));
     }

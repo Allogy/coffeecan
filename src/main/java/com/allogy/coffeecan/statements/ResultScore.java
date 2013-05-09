@@ -16,11 +16,17 @@
 
 package com.allogy.coffeecan.statements;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import java.math.BigDecimal;
+
 public class ResultScore
 {
-    private Double scaled;
+    @Min(-1)
+    @Max(1)
+    private BigDecimal scaled;
 
-    public Double getScaled()
+    public BigDecimal getScaled()
     {
         return scaled;
     }
