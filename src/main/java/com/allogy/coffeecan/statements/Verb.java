@@ -25,7 +25,7 @@ import java.util.Map;
 public class Verb implements Identifiable
 {
     @NotNull
-    private String id;
+    private final String id;
 
     private Map<String, String> display;
 

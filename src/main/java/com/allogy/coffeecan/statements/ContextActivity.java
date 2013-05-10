@@ -24,7 +24,7 @@ import javax.validation.constraints.NotNull;
 public class ContextActivity implements Identifiable
 {
     @NotNull
-    private String id;
+    private final String id;
 
     public ContextActivity(@JsonProperty("id") String id)
     {

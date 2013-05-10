@@ -28,7 +28,7 @@ public class Activity extends StatementObject implements Identifiable
     public static final String ObjectType = OBJECT_TYPE;
 
     @NotNull
-    private String id;
+    private final String id;
 
     private ActivityDefinition definition;
 

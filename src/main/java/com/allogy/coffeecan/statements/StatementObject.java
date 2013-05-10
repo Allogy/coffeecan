@@ -27,7 +27,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         visible = true,
         defaultImpl = Activity.class)
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = Activity.class, name = Activity.OBJECT_TYPE),
+        @JsonSubTypes.Type(value = Activity.class, name = Activity.OBJECT_TYPE)
 })
 public abstract class StatementObject
 {
