@@ -24,8 +24,6 @@ import javax.validation.constraints.NotNull;
 public class Activity extends StatementObject implements Identifiable
 {
     public static final String OBJECT_TYPE = "Activity";
-    @Deprecated
-    public static final String ObjectType = OBJECT_TYPE;
 
     @NotNull
     private final String id;

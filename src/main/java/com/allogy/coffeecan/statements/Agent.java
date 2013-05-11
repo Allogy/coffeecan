@@ -23,8 +23,6 @@ import javax.validation.Valid;
 public class Agent extends Actor
 {
     public static final String OBJECT_TYPE = "Agent";
-    @Deprecated
-    public static final String ObjectType = OBJECT_TYPE;
 
     private String name;
     @JsonProperty("mbox")

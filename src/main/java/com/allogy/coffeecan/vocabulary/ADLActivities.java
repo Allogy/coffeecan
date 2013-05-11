@@ -19,10 +19,4 @@ package com.allogy.coffeecan.vocabulary;
 public class ADLActivities
 {
     public static final String ASSESSMENT_ID = "http://adlnet.gov/expapi/activities/assessment";
-
-    /**
-     * Use {@link ADLActivities.ASSESSMENT_ID}
-     */
-    @Deprecated
-    public static final String AssessmentID = ASSESSMENT_ID;
 }
