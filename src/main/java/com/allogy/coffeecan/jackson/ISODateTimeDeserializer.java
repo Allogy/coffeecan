@@ -20,6 +20,7 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
+import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
@@ -38,6 +39,14 @@ public class ISODateTimeDeserializer extends JsonDeserializer<DateTime>
     @Override
     public DateTime deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException
     {
-        return dateTimeFormatter.parseDateTime(jsonParser.getText());
+        String text = jsonParser.getText();
+        try
+        {
+            return dateTimeFormatter.parseDateTime(text);
+        }
+        catch (Throwable throwable)
+        {
+            throw new InvalidFormatException(throwable.getMessage(), text, String.class);
+        }
     }
 }

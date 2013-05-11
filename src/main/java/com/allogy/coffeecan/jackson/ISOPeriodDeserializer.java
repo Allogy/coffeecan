@@ -20,6 +20,7 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import org.joda.time.Period;
 
 import java.io.IOException;
@@ -34,6 +35,14 @@ public class ISOPeriodDeserializer extends StdDeserializer<Period>
     @Override
     public Period deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException
     {
-        return new Period(jsonParser.getText());
+        String textValue = jsonParser.getText();
+        try
+        {
+            return new Period(textValue);
+        }
+        catch (Throwable throwable)
+        {
+            throw new InvalidFormatException(throwable.getMessage(), textValue, String.class);
+        }
     }
 }
