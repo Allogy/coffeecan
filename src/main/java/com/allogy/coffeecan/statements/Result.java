@@ -29,7 +29,6 @@ public class Result
     private ResultScore score;
     private Boolean success;
     private Boolean completion;
-    @JsonDeserialize(using = ISOPeriodDeserializer.class)
     private Period duration;
 
     public ResultScore getScore()
@@ -37,9 +36,19 @@ public class Result
         return score;
     }
 
+    public void setScore(ResultScore score)
+    {
+        this.score = score;
+    }
+
     public Boolean getSuccess()
     {
         return success;
+    }
+
+    public void setSuccess(Boolean success)
+    {
+        this.success = success;
     }
 
     public Boolean getCompletion()
@@ -47,9 +56,20 @@ public class Result
         return completion;
     }
 
+    public void setCompletion(Boolean completion)
+    {
+        this.completion = completion;
+    }
+
     @JsonSerialize(using = ISOPeriodSerializer.class)
     public Period getDuration()
     {
         return duration;
+    }
+
+    @JsonDeserialize(using = ISOPeriodDeserializer.class)
+    public void setDuration(Period duration)
+    {
+        this.duration = duration;
     }
 }

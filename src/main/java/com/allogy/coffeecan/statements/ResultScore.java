@@ -30,4 +30,9 @@ public class ResultScore
     {
         return scaled;
     }
+
+    public void setScaled(BigDecimal scaled)
+    {
+        this.scaled = scaled;
+    }
 }
