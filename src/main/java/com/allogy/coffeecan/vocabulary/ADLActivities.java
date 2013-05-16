@@ -19,4 +19,5 @@ package com.allogy.coffeecan.vocabulary;
 public class ADLActivities
 {
     public static final String ASSESSMENT_ID = "http://adlnet.gov/expapi/activities/assessment";
+    public static final String MODULE_ID = "http://adlnet.gov/expapi/activities/module";
 }
