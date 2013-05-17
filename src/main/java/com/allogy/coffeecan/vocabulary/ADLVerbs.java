@@ -19,4 +19,5 @@ package com.allogy.coffeecan.vocabulary;
 public class ADLVerbs
 {
     public static final String COMPLETED_ID = "http://adlnet.gov/expapi/verbs/completed";
+    public static final String PROGRESSED_ID = "http://adlnet.gov/expapi/verbs/progressed";
 }
