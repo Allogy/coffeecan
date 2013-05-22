@@ -21,9 +21,9 @@ import com.allogy.coffeecan.jackson.ISODateTimeDeserializer;
 import com.allogy.coffeecan.jackson.ISODateTimeSerializer;
 import com.allogy.coffeecan.statements.validation.ExistsInLearningRecordStore;
 import com.allogy.coffeecan.statements.validation.NotPresentInLearningRecordStore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.codehaus.jackson.annotate.JsonProperty;
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.NotNull;

@@ -16,15 +16,14 @@
 
 package com.allogy.coffeecan.statements;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonSubTypes;
+import org.codehaus.jackson.annotate.JsonTypeInfo;
 
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
         include = JsonTypeInfo.As.PROPERTY,
         property = "objectType",
-        visible = true,
         defaultImpl = Activity.class)
 @JsonSubTypes({
         @JsonSubTypes.Type(value = Activity.class, name = Activity.OBJECT_TYPE)

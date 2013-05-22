@@ -18,9 +18,9 @@ package com.allogy.coffeecan.statements;
 
 import com.allogy.coffeecan.jackson.ISOPeriodDeserializer;
 import com.allogy.coffeecan.jackson.ISOPeriodSerializer;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.joda.time.Period;
 
 @JsonIgnoreProperties(ignoreUnknown = true)

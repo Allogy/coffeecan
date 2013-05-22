@@ -16,16 +16,16 @@
 
 package com.allogy.coffeecan.jackson;
 
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JsonDeserializer;
-import com.fasterxml.jackson.databind.exc.InvalidFormatException;
+import org.codehaus.jackson.JsonParser;
+import org.codehaus.jackson.JsonProcessingException;
+import org.codehaus.jackson.map.DeserializationContext;
+import org.codehaus.jackson.map.JsonDeserializer;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
 
 import java.io.IOException;
+import java.io.InvalidObjectException;
 
 public class ISODateTimeDeserializer extends JsonDeserializer<DateTime>
 {
@@ -46,7 +46,7 @@ public class ISODateTimeDeserializer extends JsonDeserializer<DateTime>
         }
         catch (Throwable throwable)
         {
-            throw new InvalidFormatException(throwable.getMessage(), text, String.class);
+            throw new InvalidObjectException(throwable.getMessage() + text);
         }
     }
 }

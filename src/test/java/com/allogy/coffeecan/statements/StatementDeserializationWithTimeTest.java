@@ -16,8 +16,8 @@
 
 package com.allogy.coffeecan.statements;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.codehaus.jackson.JsonNode;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormatter;
@@ -94,10 +94,10 @@ public class StatementDeserializationWithTimeTest
 
         JsonNode timestampNode = rootNode.get("timestamp");
         assertThat(timestampNode, notNullValue());
-        assertThat(timestampNode.textValue(), is(timestampString));
+        assertThat(timestampNode.asText(), is(timestampString));
 
         JsonNode storedNode = rootNode.get("stored");
         assertThat(storedNode, notNullValue());
-        assertThat(storedNode.textValue(), is(storedString));
+        assertThat(storedNode.asText(), is(storedString));
     }
 }

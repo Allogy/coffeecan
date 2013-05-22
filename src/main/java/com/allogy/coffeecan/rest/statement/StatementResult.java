@@ -1,7 +1,7 @@
 package com.allogy.coffeecan.rest.statement;
 
 import com.allogy.coffeecan.statements.Statement;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import org.codehaus.jackson.annotate.JsonProperty;
 
 import java.util.List;
 

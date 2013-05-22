@@ -16,15 +16,15 @@
 
 package com.allogy.coffeecan.jackson;
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.ser.std.StdSerializer;
+import org.codehaus.jackson.JsonGenerator;
+import org.codehaus.jackson.JsonProcessingException;
+import org.codehaus.jackson.map.SerializerProvider;
+import org.codehaus.jackson.map.ser.std.ScalarSerializerBase;
 import org.joda.time.Period;
 
 import java.io.IOException;
 
-public class ISOPeriodSerializer extends StdSerializer<Period>
+public class ISOPeriodSerializer extends ScalarSerializerBase<Period>
 {
     protected ISOPeriodSerializer()
     {
@@ -36,4 +36,5 @@ public class ISOPeriodSerializer extends StdSerializer<Period>
     {
         jsonGenerator.writeString(period.toString());
     }
+
 }

@@ -16,14 +16,14 @@
 
 package com.allogy.coffeecan.jackson;
 
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.fasterxml.jackson.databind.exc.InvalidFormatException;
+import org.codehaus.jackson.JsonParser;
+import org.codehaus.jackson.JsonProcessingException;
+import org.codehaus.jackson.map.DeserializationContext;
+import org.codehaus.jackson.map.deser.std.StdDeserializer;
 import org.joda.time.Period;
 
 import java.io.IOException;
+import java.io.InvalidObjectException;
 
 public class ISOPeriodDeserializer extends StdDeserializer<Period>
 {
@@ -42,7 +42,7 @@ public class ISOPeriodDeserializer extends StdDeserializer<Period>
         }
         catch (Throwable throwable)
         {
-            throw new InvalidFormatException(throwable.getMessage(), textValue, String.class);
+            throw new InvalidObjectException(throwable.getMessage() + textValue);
         }
     }
 }
