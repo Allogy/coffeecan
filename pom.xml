@@ -21,7 +21,7 @@
     <name>CoffeeCan</name>
     <groupId>com.allogy.coffeecan</groupId>
     <artifactId>coffeecan-jackson1</artifactId>
-    <version>0.4</version>
+    <version>0.5-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <description>
@@ -37,7 +37,7 @@
     <scm>
         <connection>scm:git:git@github.com:Allogy/coffeecan.git</connection>
         <developerConnection>scm:git:git@github.com:Allogy/coffeecan.git</developerConnection>
-        <tag>v0.4-jackson1</tag>
+        <tag>jackson-1.x</tag>
     </scm>
 
     <dependencies>
