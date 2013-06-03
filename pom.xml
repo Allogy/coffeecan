@@ -20,12 +20,13 @@
 
     <name>CoffeeCan</name>
     <groupId>com.allogy.coffeecan</groupId>
-    <artifactId>coffeecan</artifactId>
+    <artifactId>coffeecan-jackson1</artifactId>
     <version>0.4-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <description>
-        A Java library for supporting the TinCan API. It currently supports v0.95.
+        A Java library for supporting the TinCan API. It currently supports v0.95. This version
+        builds against Jackson 1.x.
     </description>
 
     <organization>
