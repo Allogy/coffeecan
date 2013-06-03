@@ -37,7 +37,7 @@
     <scm>
         <connection>scm:git:git@github.com:Allogy/coffeecan.git</connection>
         <developerConnection>scm:git:git@github.com:Allogy/coffeecan.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>jackson-1.x</tag>
     </scm>
 
     <dependencies>
@@ -115,7 +115,7 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <tagNameFormat>v@{project.version}-jackson1</tagNameFormat>
                     <localCheckout>true</localCheckout>
                 </configuration>
             </plugin>
