@@ -16,8 +16,8 @@
 
 package com.allogy.coffeecan.statements;
 
-import com.allogy.coffeecan.jackson.ISOPeriodDeserializer;
-import com.allogy.coffeecan.jackson.ISOPeriodSerializer;
+import com.allogy.json.jackson.joda.ISOPeriodDeserializer;
+import com.allogy.json.jackson.joda.ISOPeriodSerializer;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;

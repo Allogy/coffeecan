@@ -17,10 +17,10 @@
 package com.allogy.coffeecan.statements;
 
 import com.allogy.coffeecan.Identifiable;
-import com.allogy.coffeecan.jackson.ISODateTimeDeserializer;
-import com.allogy.coffeecan.jackson.ISODateTimeSerializer;
 import com.allogy.coffeecan.statements.validation.ExistsInLearningRecordStore;
 import com.allogy.coffeecan.statements.validation.NotPresentInLearningRecordStore;
+import com.allogy.json.jackson.joda.ISODateTimeDeserializer;
+import com.allogy.json.jackson.joda.ISODateTimeSerializer;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
